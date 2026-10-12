@@ -1,62 +1,36 @@
 # Siam Drift — Bangkok Canal Tour Website
 
-Siam Drift is an original, responsive portfolio concept for a premium private boat-tour brand. It is inspired by the general category of Bangkok canal-tour websites, but uses its own brand name, copy, layout, and visual direction.
+Siam Drift is an original, responsive website concept for a premium private boat-tour brand in Bangkok. It combines a cinematic visual style with tour discovery and a guided booking demo.
+
+[View the live site](https://kushtrimaziri.github.io/siam-drift/)
 
 ## Features
 
-- Responsive homepage and mobile navigation with opaque, scrollable mobile menu
-- Animated editorial ticker, reading-progress indicator, and back-to-top control
-- Gentle scroll reveals with reduced-motion support
-- Tours listing with search, category filters, and duration filters
-- Individual tour detail pages driven by JavaScript data
-- Demo booking form with client-side validation and summary
-- About, contact, and FAQ pages
-- Accessible form labels, keyboard focus styles, skip link, and reduced-motion support
-- No frameworks, build tools, package installs, or paid services required
-
-## Run locally
-
-1. Extract the ZIP.
-2. Open the `siam-drift` folder in Visual Studio Code.
-3. Open `index.html` with the Live Server extension, or open the HTML file directly in your browser.
-4. For the best experience, use Live Server so page navigation and relative assets behave consistently.
+- Responsive homepage and mobile navigation
+- Tour listing with search, category, and duration filters
+- Individual tour pages powered by JavaScript data
+- Booking demo with client-side validation and a booking summary
+- About, contact, and FAQ content
+- Scroll effects, reading progress, and back-to-top control
+- Keyboard focus styles, skip link, and reduced-motion support
 
 ## Pages
 
 - `index.html` — homepage
-- `tours.html` — searchable/filterable tour listing
-- `tour.html?id=quiet-khlongs` — tour details
-- `booking.html` — demo booking flow
+- `tours.html` — searchable and filterable tour listing
+- `tour.html` — individual tour details
+- `booking.html` — booking demo
 - `about.html` — concept and brand story
-- `contact.html` — contact form demo and FAQ
+- `contact.html` — contact form and FAQ
 
-## Important demo limitations
+## Built with
 
-This is a frontend portfolio project only:
-- Tour content, route descriptions, and prices are illustrative.
-- It does not check real boat availability.
-- It does not create or store real reservations.
-- It does not send emails or messages.
-- It does not accept payments.
-- No backend or database is included.
+HTML · CSS · Vanilla JavaScript
 
-A production version would require verified business information, a backend API, a database, server-side validation, secure booking/availability logic, payment-provider integration, and appropriate privacy/cancellation policies.
+## Run locally
 
-## Images and fonts
+Open `index.html` in a browser, or use VS Code’s Live Server extension for the best experience with page navigation and relative assets.
 
-The page uses remote images hosted by Unsplash's image CDN and Google Fonts. An internet connection is needed for these external assets. Before publishing a commercial website, verify image usage rights and replace demo imagery with appropriately licensed, authentic photos.
+## Booking demo
 
-## Customize
-
-- Edit tour content in `assets/js/tours.js`.
-- Edit visual styles and responsive breakpoints in `assets/css/styles.css`.
-- Shared navigation and form demo behaviours are in `assets/js/main.js`.
-- Booking interaction is in `assets/js/booking.js`.
-
-## Suggested next steps
-
-1. Test all pages at desktop and mobile sizes.
-2. Replace placeholder/demo imagery and content with properly licensed material.
-3. Add screenshots to this README once the design is finalized.
-4. Deploy the static portfolio to GitHub Pages.
-5. Add a real backend only if the project later needs real reservations.
+The booking flow demonstrates the front-end experience only. It does not create real reservations or process payments.
