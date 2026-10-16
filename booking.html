@@ -1,34 +1,148 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Plan your private Bangkok canal trip with Siam Drift. Portfolio demo booking flow.">
-  <meta name="theme-color" content="#123f39"><title>Plan your trip — Siam Drift</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css"><script src="assets/js/main.js" defer></script><script src="assets/js/tours.js" defer></script><script src="assets/js/booking.js" defer></script>
-</head>
-<body>
-<header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html"><span class="brand-mark">S</span><span>siam<span class="brand-light">drift</span></span></a><button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button><nav class="primary-nav" id="primary-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="tours.html">Explore tours</a><a href="about.html">Our story</a><a href="contact.html">Contact</a><a class="nav-cta active" href="booking.html">Plan your trip <span>↗</span></a></nav></div></header>
-<main id="main">
-  <section class="page-hero page-hero-short"><div class="container page-hero-inner"><p class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> Make a day of it</p><h1>Plan your<br><em>drift.</em></h1><p>Build your ideal trip. This is a front-end demo; it does not create a real reservation.</p></div></section>
-  <section class="section section-cream"><div class="container booking-layout">
-    <div class="booking-form-panel"><p class="eyebrow"><span class="eyebrow-line"></span> Your trip, your way</p><h2>Let's make it<br><em>yours.</em></h2>
-      <form id="booking-form" class="booking-form">
-        <div class="form-field full-field"><label for="booking-tour">Choose an experience</label><select id="booking-tour" name="tour" required><option value="">Select a tour</option></select></div>
-        <div class="form-field"><label for="booking-date">Preferred date</label><input type="date" id="booking-date" name="date" required></div>
-        <div class="form-field"><label for="booking-time">Preferred start</label><select id="booking-time" name="time" required><option value="">Choose a time</option><option>09:00</option><option>11:00</option><option>13:30</option><option>16:00</option></select></div>
-        <div class="form-field"><label for="booking-guests">Number of guests</label><select id="booking-guests" name="guests"><option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option></select></div>
-        <div class="form-field"><label for="booking-name">Your name</label><input id="booking-name" name="name" autocomplete="name" placeholder="Full name" required></div>
-        <div class="form-field full-field"><label for="booking-email">Email address</label><input id="booking-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
-        <div class="form-field full-field"><label for="booking-notes">Anything else? <span class="label-muted">Optional</span></label><textarea id="booking-notes" name="notes" rows="3" placeholder="A special occasion, a stop you'd love to make…"></textarea></div>
-        <div class="demo-consent"><span>ⓘ</span><p><strong>Portfolio demo only.</strong> Your details stay in this browser session; no booking is sent or stored.</p></div>
-        <button class="button button-dark button-wide" type="submit">Review demo request <span>↗</span></button>
-        <p class="form-message" id="booking-message" aria-live="polite"></p>
-      </form>
-    </div>
-    <aside class="booking-summary"><div class="summary-image" id="summary-image"></div><div class="summary-content"><p class="eyebrow">Your trip at a glance</p><h3 id="summary-title">Choose an experience</h3><p id="summary-description">Select a tour to see its details and estimated group price.</p><div class="summary-line"><span>Duration</span><strong id="summary-duration">—</strong></div><div class="summary-line"><span>Guests</span><strong id="summary-guests">2 guests</strong></div><div class="summary-line summary-total"><span>Illustrative price</span><strong id="summary-price">—</strong></div><small>Prices are sample portfolio data, not live quotes.</small></div></aside>
-  </div></section>
-</main>
-<footer class="site-footer"><div class="container footer-main"><div class="footer-brand"><a class="brand brand-footer" href="index.html"><span class="brand-mark">S</span><span>siam<span class="brand-light">drift</span></span></a><p>Bangkok, beyond the usual.<br>A concept website for a better kind of boat tour.</p></div><div class="footer-links"><div><strong>Explore</strong><a href="tours.html">All tours</a><a href="about.html">Our story</a><a href="contact.html">Contact</a></div><div><strong>Plan</strong><a href="booking.html">Demo booking</a><a href="contact.html#faq">FAQs</a><a href="contact.html#policies">Policies</a></div></div></div><div class="container footer-bottom"><span>© <span data-year></span> Siam Drift. Portfolio concept.</span><span>Made for the slower side of travel <span class="footer-spark">✳</span></span></div></footer><div class="toast" id="site-toast" role="status" aria-live="polite"></div>
-</body></html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Plan your private Bangkok canal trip with Siam Drift. Portfolio demo booking flow.">
+    <meta name="theme-color" content="#123f39">
+    <title>Plan your trip — Siam Drift</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/tours.js" defer></script>
+    <script src="assets/js/booking.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html"><span class="brand-mark">S</span><span>siam<span class="brand-light">drift</span></span></a>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
+        <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="tours.html">Explore tours</a>
+          <a href="about.html">Our story</a>
+          <a href="contact.html">Contact</a>
+          <a class="nav-cta active" href="booking.html">Plan your trip <span>↗</span></a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="page-hero page-hero-short">
+        <div class="container page-hero-inner">
+          <p class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> Make a day of it</p>
+          <h1>Plan your<br><em>drift.</em></h1>
+          <p>Build your ideal trip. This is a front-end demo; it does not create a real reservation.</p>
+        </div>
+      </section>
+      <section class="section section-cream">
+        <div class="container booking-layout">
+          <div class="booking-form-panel">
+            <p class="eyebrow"><span class="eyebrow-line"></span> Your trip, your way</p>
+            <h2>Let's make it<br><em>yours.</em></h2>
+            <form id="booking-form" class="booking-form">
+              <div class="form-field full-field">
+                <label for="booking-tour">Choose an experience</label>
+                <select id="booking-tour" name="tour" required>
+                  <option value="">Select a tour</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="booking-date">Preferred date</label>
+                <input type="date" id="booking-date" name="date" required>
+              </div>
+              <div class="form-field">
+                <label for="booking-time">Preferred start</label>
+                <select id="booking-time" name="time" required>
+                  <option value="">Choose a time</option>
+                  <option>09:00</option>
+                  <option>11:00</option>
+                  <option>13:30</option>
+                  <option>16:00</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="booking-guests">Number of guests</label>
+                <select id="booking-guests" name="guests">
+                  <option value="1">1 guest</option>
+                  <option value="2" selected>2 guests</option>
+                  <option value="3">3 guests</option>
+                  <option value="4">4 guests</option>
+                  <option value="5">5 guests</option>
+                  <option value="6">6 guests</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="booking-name">Your name</label>
+                <input id="booking-name" name="name" autocomplete="name" placeholder="Full name" required>
+              </div>
+              <div class="form-field full-field">
+                <label for="booking-email">Email address</label>
+                <input id="booking-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+              </div>
+              <div class="form-field full-field">
+                <label for="booking-notes">Anything else? <span class="label-muted">Optional</span></label>
+                <textarea id="booking-notes" name="notes" rows="3" placeholder="A special occasion, a stop you'd love to make…"></textarea>
+              </div>
+              <div class="demo-consent">
+                <span>ⓘ</span>
+                <p><strong>Portfolio demo only.</strong> Your details stay in this browser session; no booking is sent or stored.</p>
+              </div>
+              <button class="button button-dark button-wide" type="submit">Review demo request <span>↗</span></button>
+              <p class="form-message" id="booking-message" aria-live="polite"></p>
+            </form>
+          </div>
+          <aside class="booking-summary">
+            <div class="summary-image" id="summary-image"></div>
+            <div class="summary-content">
+              <p class="eyebrow">Your trip at a glance</p>
+              <h3 id="summary-title">Choose an experience</h3>
+              <p id="summary-description">Select a tour to see its details and estimated group price.</p>
+              <div class="summary-line">
+                <span>Duration</span>
+                <strong id="summary-duration">—</strong>
+              </div>
+              <div class="summary-line">
+                <span>Guests</span>
+                <strong id="summary-guests">2 guests</strong>
+              </div>
+              <div class="summary-line summary-total">
+                <span>Illustrative price</span>
+                <strong id="summary-price">—</strong>
+              </div>
+              <small>Prices are sample portfolio data, not live quotes.</small>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div class="footer-brand">
+          <a class="brand brand-footer" href="index.html"><span class="brand-mark">S</span><span>siam<span class="brand-light">drift</span></span></a>
+          <p>Bangkok, beyond the usual.<br>A concept website for a better kind of boat tour.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <strong>Explore</strong>
+            <a href="tours.html">All tours</a>
+            <a href="about.html">Our story</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div>
+            <strong>Plan</strong>
+            <a href="booking.html">Demo booking</a>
+            <a href="contact.html#faq">FAQs</a>
+            <a href="contact.html#policies">Policies</a>
+          </div>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© <span data-year></span> Siam Drift. Portfolio concept.</span>
+        <span>Made for the slower side of travel <span class="footer-spark">✳</span></span>
+      </div>
+    </footer>
+    <div class="toast" id="site-toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
