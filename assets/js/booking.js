@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const message = document.querySelector("#booking-message");
   const params = new URLSearchParams(window.location.search);
 
+  // Fill the selector from the shared tour list and honor a linked tour choice.
   window.tours.forEach(tour => {
     const option = document.createElement("option");
     option.value = tour.id;
@@ -23,10 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   if (params.get("tour") && window.tours.some(t => t.id === params.get("tour"))) tourSelect.value = params.get("tour");
 
+  // Set the date minimum using the visitor’s local calendar date.
   const today = new Date();
-  const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0,10);
+  const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
   dateInput.min = localToday;
 
+  // Keep the trip summary aligned with the current selections.
   function updateSummary() {
     const tour = window.tours.find(t => t.id === tourSelect.value);
     const guests = Number(guestSelect.value);
@@ -48,13 +51,14 @@ document.addEventListener("DOMContentLoaded", () => {
   [tourSelect, guestSelect].forEach(el => el.addEventListener("change", updateSummary));
   updateSummary();
 
+  // Validate the demo request locally; no data is sent or stored.
   form.addEventListener("submit", event => {
     event.preventDefault();
     if (!form.reportValidity()) return;
     const tour = window.tours.find(t => t.id === tourSelect.value);
     if (!tour) return;
     const data = new FormData(form);
-    const ref = "SD-DEMO-" + Math.random().toString(36).slice(2,8).toUpperCase();
+    const ref = "SD-DEMO-" + Math.random().toString(36).slice(2, 8).toUpperCase();
     message.className = "form-message success-message";
     message.innerHTML = `<strong>Demo request reviewed — ${ref}</strong><br>${data.get("name")}, your sample request for <strong>${tour.name}</strong> on ${data.get("date")} at ${data.get("time")} has been validated in this browser. Nothing has been booked, sent, or charged.`;
     message.scrollIntoView({ behavior: "smooth", block: "nearest" });
