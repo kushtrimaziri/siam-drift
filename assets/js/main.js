@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-year]").forEach(el => el.textContent = new Date().getFullYear());
 
+  // Keep the mobile navigation state in sync with keyboard and resize events.
   const toggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector("#primary-nav");
   if (toggle && nav) {
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Demo feedback for forms and other small interactions.
   const toast = document.querySelector("#site-toast");
   const showToast = text => {
     if (!toast) return;
@@ -60,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Keep a useful fallback when a remote image cannot be loaded.
   document.querySelectorAll("img").forEach(img => {
     img.addEventListener("error", () => {
       img.classList.add("image-unavailable");
@@ -80,7 +83,12 @@ document.addEventListener("DOMContentLoaded", () => {
   backToTop.title = "Back to top";
   backToTop.textContent = "↑";
   document.body.appendChild(backToTop);
-  backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }));
+  backToTop.addEventListener("click", () =>
+    window.scrollTo({
+      top: 0,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+    })
+  );
 
   let scrollTicking = false;
   const updateScrollUI = () => {
